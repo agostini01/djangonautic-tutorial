@@ -6,10 +6,11 @@
 
 {% block content %}
     <h1>Article List</h1>
+    <p></p>
     <div class="articles">
         {% for article in articles %}
             <div class = "article">
-                <h2><a herf='#'>{{ article.title }}</a></h2>
+                <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{ article.title }}</a></h2>
                 <p>{{ article.snippet }}</p>
             </div>
         {% endfor %}
